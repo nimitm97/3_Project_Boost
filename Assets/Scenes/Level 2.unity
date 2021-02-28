@@ -38,13 +38,13 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
+  m_IndirectSpecularColor: {r: 0.44673645, g: 0.49168354, b: 0.54848605, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 11
-  m_GIWorkflowMode: 1
+  m_GIWorkflowMode: 0
   m_GISettings:
     serializedVersion: 2
     m_BounceScale: 1
@@ -709,7 +709,12 @@ PrefabInstance:
     - target: {fileID: 235985808454243996, guid: cb357ba09ba29a141bc550fe443c572c,
         type: 3}
       propertyPath: m_Name
-      value: Landing pad
+      value: Launch Pad
+      objectReference: {fileID: 0}
+    - target: {fileID: 235985808454243996, guid: cb357ba09ba29a141bc550fe443c572c,
+        type: 3}
+      propertyPath: m_TagString
+      value: Friendly
       objectReference: {fileID: 0}
     - target: {fileID: 235985808454243998, guid: cb357ba09ba29a141bc550fe443c572c,
         type: 3}
@@ -1916,18 +1921,18 @@ PrefabInstance:
     - target: {fileID: 235985808454243996, guid: cb357ba09ba29a141bc550fe443c572c,
         type: 3}
       propertyPath: m_Name
-      value: Launch Pad
+      value: Landing Pad
       objectReference: {fileID: 0}
     - target: {fileID: 235985808454243996, guid: cb357ba09ba29a141bc550fe443c572c,
         type: 3}
       propertyPath: m_TagString
-      value: Friendly
+      value: Finish
       objectReference: {fileID: 0}
     - target: {fileID: 235985808454243998, guid: cb357ba09ba29a141bc550fe443c572c,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: b2ac153340b47ae409630bd4749b8011, type: 2}
+      objectReference: {fileID: 2100000, guid: b06ea2c5630ee7d48a5e78cda457a126, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: cb357ba09ba29a141bc550fe443c572c, type: 3}
 --- !u!1001 &594682142713207699
