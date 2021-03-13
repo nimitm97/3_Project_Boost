@@ -1,0 +1,20 @@
+fileFormatVersion: 2
+guid: 81c2188744fadf54c9aca25c37b99d49
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences:
+  - mainEngine: {fileID: 8300000, guid: e651bcefcf8738f4bbfdcf518c0c2061, type: 3}
+  - success: {fileID: 8300000, guid: d07ce518e2d5bba489637f53e57578fa, type: 3}
+  - death: {fileID: 8300000, guid: 73a23dbf328a46442a7fac0245b81d2c, type: 3}
+  - mainEngineParticles: {fileID: 198100719057022332, guid: a3553fd250eb92d4091bebde350c6739,
+      type: 3}
+  - successParticles: {fileID: 198631066050499358, guid: 62198a3a5dbb64a4f9e1618929224faa,
+      type: 3}
+  - deathParticles: {fileID: 198204746014789312, guid: ab79a37535b979f48b6de56e3a0a5cb0,
+      type: 3}
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

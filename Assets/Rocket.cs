@@ -30,23 +30,19 @@ public class Rocket : MonoBehaviour
     {
         rigidbody = GetComponent<Rigidbody>();
         audioSource = GetComponent<AudioSource>();
+        state = State.Alive;
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (state != State.Dying)
+        if (state == State.Alive)
         {
-            ProcessInput();
+            Thrust();
+            Rotate();
         }
         
         //print("Update");
-    }
-
-    private void ProcessInput()
-    {
-        Thrust();
-        Rotate();
     }
 
     private void Thrust()
@@ -115,6 +111,7 @@ public class Rocket : MonoBehaviour
                 state = State.Dying;
                 audioSource.Stop();
                 audioSource.PlayOneShot(death);
+                deathParticles.Play();
                 Invoke("LoadStartScene", 1f);
                 break;
         }
