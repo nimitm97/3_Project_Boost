@@ -11,4 +11,4 @@ This is a Unity game where the player has to maneuver a rocket through the obsta
 
 ## Game Screenshots
 
-![alt text](http://url/to/img.png)
+![alt text](https://github.com/nimitm97/3_Project_Boost/tree/main/Screenshots/game_basic.png)
