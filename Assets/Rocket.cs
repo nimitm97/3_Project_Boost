@@ -19,6 +19,7 @@ public class Rocket : MonoBehaviour
 
     Rigidbody rigidbody;
     AudioSource audioSource;
+    bool collisionsDisabled = false;
 
     enum State
     {
@@ -41,8 +42,22 @@ public class Rocket : MonoBehaviour
             Thrust();
             Rotate();
         }
-        
-        //print("Update");
+        if (Debug.isDebugBuild)
+        {
+            RespondToDebugKeys();
+        }
+    }
+
+    private void RespondToDebugKeys()
+    {
+        if (Input.GetKeyDown(KeyCode.L))
+        {
+            LoadNextScene();
+        }
+        else if (Input.GetKeyDown(KeyCode.C))
+        {
+            collisionsDisabled = !(collisionsDisabled);
+        }
     }
 
     private void Thrust()
@@ -65,7 +80,7 @@ public class Rocket : MonoBehaviour
     }
     private void Rotate()
     {
-        rigidbody.freezeRotation = true; //take manual control of rotation
+        rigidbody.angularVelocity = Vector3.zero; //take manual control of rotation
         float rotationThisFrame = rcsThrust * Time.deltaTime;
         if (Input.GetKey(KeyCode.A))
         {
@@ -81,7 +96,9 @@ public class Rocket : MonoBehaviour
 
     void LoadNextScene()
     {
-        SceneManager.LoadScene(1);
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+        int nextSceneIndex = currentSceneIndex + 1 < SceneManager.sceneCountInBuildSettings ? currentSceneIndex + 1 : 0;
+        SceneManager.LoadScene(nextSceneIndex);
     }
 
     void LoadStartScene()
@@ -90,7 +107,7 @@ public class Rocket : MonoBehaviour
     }
     private void OnCollisionEnter(Collision collision)
     {
-        if (state != State.Alive)
+        if (state != State.Alive || collisionsDisabled)
         {
             return;
         }
